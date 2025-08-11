@@ -57,7 +57,7 @@ const JobListing = () => {
 
   return (
     <div>
-      <h1 className="gradient-title font-extrabold text-6xl sm:text-7xl text-center pb-8">
+      <h1 className="gradient-title font-extrabold text-6xl sm:text-7xl text-center pb-8  ">
         Latest Jobs
       </h1>
 
@@ -65,7 +65,7 @@ const JobListing = () => {
 
       <form
         onSubmit={handleSearch}
-        className="h-14 flex w-full gap-2 items-center mb-3 "
+        className="h-14 flex w-full gap-2  items-center mb-3  "
       >
         <Input
           type="text"
@@ -78,7 +78,7 @@ const JobListing = () => {
         </Button>
       </form>
 
-      <div className="flex flex-col sm:flex-row gap-2">
+      <div className="flex flex-col sm:flex-row gap-2 max-sm:mx-2">
         <Select
           value={company_id}
           onValueChange={(value) => setCompany_id(value)}

@@ -104,7 +104,7 @@ const PostJob = () => {
           <p className="text-red-500">{errors.description.message}</p>
         )}
 
-        <div className="flex gap-4 items-center">
+        <div className="flex gap-1 max-sm:flex-col gap-4 items-center">
           <Controller
             name="location"
             control={control}
