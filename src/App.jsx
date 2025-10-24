@@ -1,6 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import AppLayout from "./layouts/app-layout";
+import DashboardLayout from "./pages/dashboard";
+import Overview from "./pages/dashboard/overview";
+import ProductCrud from "./pages/dashboard/product-crud";
+import ProductsOverview from "./pages/dashboard/products-overview";
+import Customers from "./pages/dashboard/customers";
+import Orders from "./pages/dashboard/orders";
 import LandingPage from "./pages/landing";
 import JobListing from "./pages/job-listing";
 import Job from "./pages/job";
@@ -19,6 +25,22 @@ function App() {
         {
           path: "/",
           element: <LandingPage />,
+        },
+        {
+          path: "/dashboard",
+          element: (
+            <ProtectedRoutes>
+              <DashboardLayout />
+            </ProtectedRoutes>
+          ),
+          children: [
+            { index: true, element: <Overview /> },
+            { path: "overview", element: <Overview /> },
+            { path: "product-crud", element: <ProductCrud /> },
+            { path: "products-overview", element: <ProductsOverview /> },
+            { path: "customers", element: <Customers /> },
+            { path: "orders", element: <Orders /> },
+          ],
         },
         {
           path: "/onboarding",
