@@ -6,6 +6,7 @@ import JobListing from "./pages/job-listing";
 import Job from "./pages/job";
 import MyJobs from "./pages/my-jobs";
 import Onboarding from "./pages/onboarding";
+import Overview from "./pages/dashboard";
 import PostJob from "./pages/post-job";
 import SavedJob from "./pages/saved-job";
 import { ThemeProvider } from "./components/theme-provider";
@@ -19,6 +20,14 @@ function App() {
         {
           path: "/",
           element: <LandingPage />,
+        },
+        {
+          path: "/dashboard",
+          element: (
+            <ProtectedRoutes>
+              <Overview />
+            </ProtectedRoutes>
+          ),
         },
         {
           path: "/onboarding",
